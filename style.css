@@ -1,0 +1,201 @@
+:root {
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --accent: #00d2ff;
+    --text: #ffffff;
+    --text-dim: #94a3b8;
+    --gray-pet: #6d6567;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(15, 23, 42, 0.95);
+    padding: 1.5rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 210, 255, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span { color: var(--accent); }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero h1 span { color: var(--accent); }
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.btn-hero {
+    background: var(--accent);
+    color: var(--bg-main);
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.btn-hero:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
+}
+
+/* Jogos Section */
+.games-section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.game-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+}
+
+/* Previews dos Jogos */
+.game-preview {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f172a;
+}
+
+.preview-memoria { background: linear-gradient(45deg, #1e293b, #6d6567); }
+.mini-grid { display: grid; grid-template-columns: repeat(2, 40px); gap: 5px; }
+.mini-tile { width: 40px; height: 40px; background: var(--gray-pet); border-radius: 4px; }
+.mini-tile.accent { background: var(--accent); }
+
+.preview-animal { font-size: 4rem; color: var(--accent); background: #16213e; }
+
+.preview-palavras { background: #0f3460; }
+.mini-cross { position: relative; width: 60px; height: 60px; }
+.line { position: absolute; background: var(--gray-pet); width: 100%; height: 10px; top: 25px; border-radius: 5px; }
+.line.vert { transform: rotate(90deg); }
+
+.game-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.game-info h3 { margin-bottom: 10px; font-size: 1.5rem; }
+.game-info p { color: var(--text-dim); margin-bottom: 20px; font-size: 0.95rem; }
+
+.btn-play {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-play:hover {
+    background: var(--accent);
+    color: var(--bg-main);
+}
+
+/* Footer */
+.footer {
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-dim);
+}
+
+.footer strong { color: var(--text); }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .nav-links { display: none; }
+}
